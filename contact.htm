@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Footmark — request demo, ask about pricing, or get support for land plot management solutions.">
+  <link rel="icon" href="favicon.ico">
   <title>Contact | Footmark</title>
   <link rel="stylesheet" href="css/footmark_styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header>
     <div class="container nav">
     <div class="logo-container">
       <img src="logo.png" alt="Footmark Logo" class="logo">
       <span class="brand-name">Footmark</span>
     </div>
-          <nav>
-        <a href="index.html">Home</a>
-        <a href="product.htm">Product</a>
-        <a href="contact.htm" class="active">Contact Us</a>
+          <nav aria-label="Primary" role="navigation">
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-navigation" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.htm">Product</a></li>
+          <li><a href="contact.htm" class="active" aria-current="page">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section class="page-header">
-    <h1>Contact Us</h1>
+  <main id="main-content">
+  <section class="page-header" aria-labelledby="contact-title">
+    <h1 id="contact-title">Contact Us</h1>
     <p>We’d love to hear from you.</p>
   </section>
 
@@ -36,7 +46,7 @@
       <p><strong>Address:</strong> Adibatla, Hyderabad, Telangana, 501510, India</p>
     </div>
 
-    <form class="contact-form">
+    <form class="contact-form" aria-label="Contact form">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Email" required>
       <input type="text" placeholder="Subject">
@@ -44,6 +54,8 @@
       <button type="submit">Send Message</button>
     </form>
   </section>
+
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -63,8 +75,9 @@
         <p>+91 90000 35869</p>
       </div>
     </div>
-    <p class="copyright">© 2025 DeccaniIdentity. All rights reserved.</p>
+    <p class="copyright">© 2025 DeccaniIDentity. All rights reserved.</p>
   </footer>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
 
