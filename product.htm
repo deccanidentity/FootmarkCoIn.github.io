@@ -10,64 +10,124 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header>
     <div class="container nav">
-<div class="logo-container">
-      <img src="logo.png" alt="Footmark Logo" class="logo">
-      <span class="brand-name">Footmark</span>
+      <div class="logo-container">
+        <img src="logo.png" alt="Footmark Logo" class="logo">
+        <span class="brand-name">Footmark</span>
+      </div>
+      <nav aria-label="Primary" role="navigation">
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-navigation" class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.htm" class="active" aria-current="page">Product</a></li>
+          <li><a href="contact.htm">Contact Us</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav aria-label="Primary" role="navigation">
-      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-      <ul id="primary-navigation" class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.htm" class="active" aria-current="page">Product</a></li>
-        <li><a href="contact.htm">Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
   </header>
 
   <main id="main-content">
-  <section class="page-header" aria-labelledby="page-title">
-    <h3 id="page-title">Footmark is Cross devices solutions</h3>
-        <p>Digitalizing Every Square Foot of Land – Securely, Smartly, Seamlessly.</p>
- 
-  </section>
+    <section class="page-header" aria-labelledby="page-title">
+      <h3 id="page-title">Footmark is Cross Devices Solution</h3>
+      <p>Digitalizing Every Square Foot of Land Layout – Securely, Smartly, Seamlessly.</p>
+    </section>
 
-  <section class="about-content container">
-    <p>
-      Footmark is dedicated to revolutionizing the real estate industry by digitalizing every square foot of land. 
-      We provide secure, smart, and seamless solutions for land plot management.
-    </p>
+    <section class="about-content container">
+      <p>Footmark is dedicated to revolutionizing the real estate industry by digitalizing every square foot of land. We provide secure, smart, and seamless solutions for land plot management.</p>
+      <p>Our platform offers real-time visualization of plot layouts, allowing agents, admins, and customers to see up-to-the-minute status updates. This eliminates double-bookings and ensures perfect data consistency across all users and devices.</p>
+    </section>
+    
+    <section class="features">
+      <h2>Powerful Features for Modern Land Layout Management</h2>
+      <p class="section-desc">Everything you need to manage land plots efficiently and securely</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Interactive Plot Layouts</h3>
+          <p>View and manage plots with real-time color-coded status indicators for available, booked, hold, sold, and blocked properties.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Real-Time Synchronization</h3>
+          <p>Multi-user updates sync instantly across devices, preventing double-bookings and ensuring data consistency.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Role-Based Access Control</h3>
+          <p>Secure authentication with distinct permissions for managers, admins, agents, and customers.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Multi-User Collaboration</h3>
+          <p>Enable teams to work together seamlessly with concurrent access and automatic conflict resolution.</p>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      Our platform offers real-time visualization of plot layouts, allowing agents, admins, and customers to see up-to-the-minute status updates. 
-      This eliminates double-bookings and ensures perfect data consistency across all users and devices.
-    </p>
+    <h1 id="price-title">Pricing Plans</h1>
+    <section class="pricing-plans container">
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h2>Free</h2>
+          <ul>
+            <li>Up to 2 Layouts / up to 100 plots</li>
+            <li>1 GB Storage Limit</li>
+            <li>Real-time Booking Status Update</li>
+            <li>Multi-user Collaboration</li>
+			<li>Role-Based Access</li>
+          </ul>
+        </div>
 
-    <h2>Our Mission</h2>
-    <p>
-      Our mission is to provide powerful, intuitive tools that prevent conflicts, streamline sales, and offer complete transparency. 
-      With features like role-based access control, multi-user collaboration, and instant synchronization, Footmark is the future of land management.
-    </p>
+        <div class="pricing-card">
+          <h2>Pro</h2>
+          <ul>
+            <li>All Basic Features</li>
+            <li>Up to 100 Layouts / up to 1000 plots</li>
+            <li>20 GB Storage Limit</li>
+            <li>Edit Layouts Features</li>
+            <li>Download Reports</li>            	
+          </ul>
+        </div>
 
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li><strong>Real-Time Sync:</strong> Never worry about outdated information or double-bookings again.</li>
-      <li><strong>Secure Access:</strong> Different roles for different users ensures data integrity.</li>
-      <li><strong>Collaborative:</strong> Enable your entire team to work together seamlessly.</li>
-    </ul>
-  </section>
+        <div class="pricing-card">
+          <h2>Pro Plus</h2>
+          <ul>
+            <li>All Pro Features</li>
+			<li>No Limit uploading for Layouts / plots</li>
+            <li>Up to 1 TB, than charges T&C</li>            
+            <li>Admin Analytics Dashboard</li>
+			<li>API Integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
+    <section class="downloads-section">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Mobile App (Android & iOS)</h3>
+          <p>The Footmark app is available for Android and iOS devices. To get access, please submit a request and our team will share the download link with you.
+          </p>
+          <p>
+        <a href="contact.htm" class="cta">Request for Mobile App</a>
+      </p>
+          <!--<p class="plan-cta">
+            When clicked, this uses the default Google Form link in form-popup.js -->
+            <!--<button class="cta primary" type="button" id="requestAppBtn" onclick="openPopupArgs()">
+              Request for Mobile App
+            </button>
+          </p>-->
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer>
     <div class="footer-container">
       <div class="footer-about">
         <h3>Footmark</h3>
-        <p>Digitalizing Every Square Foot of Land – Securely, Smartly, Seamlessly.</p>
+        <p>Digitalizing Every Square Foot of Land Layout– Securely, Smartly, Seamlessly.</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
@@ -77,14 +137,48 @@
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p>info@deccaniidentity.com</p>
-        <p>+91 90000 35869</p>
-      </div>
+        <p><i class="fa fa-phone"></i> +91 90000 35869 &nbsp;<a href="tel:+919000035869"></a></p>
+        <p><i class="fa fa-envelope"></i> info@deccaniidentity.com</p>
+        <p><i class="fa fa-map-marker"></i> Deccan IDentity Software Pvt.Ltd., Hyderabad, Telangana, 501510, India</p>
     </div>
-    <p class="copyright">© 2025 DeccaniIDentity. All rights reserved.</p>
+    </div>
+    <p class="copyright">© 2025 DeccanIDentity. All rights reserved.</p>
   </footer>
-<script src="js/site.js" defer></script>
-</body>
-</html>
+  <!-- Popup Modal (connected to Google Form) -->
+  <div id="popup" class="popup" aria-hidden="true" style="display:none">
+    <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+      <button class="close-btn" aria-label="Close" onclick="closePopup()">✖</button>
+      <h3 id="popupTitle">Request Mobile App Access</h3>
+      <form id="googleForm" class="open-popup-form" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="pricingPlan">Select Plan</label>
+          <select id="pricingPlan" name="pricingPlan" required>
+            <option value="free" selected>Free Plan</option>
+            <option value="pro">Pro Plan</option>
+            <option value="proplus">Pro Plus Plan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="platform">Platform</label>
+          <select id="platform" name="platform" required>
+            <option value="android" selected>Android</option>
+            <option value="ios">iOS</option>
+          </select>
+        </div>
+        <div style="margin-top:15px; text-align:right;">
+          <button type="submit" class="cta primary">Submit Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-
+  <!-- Link to JS that handles Google Form submission -->
+  <script src="js/form-popup.js" defer></script>

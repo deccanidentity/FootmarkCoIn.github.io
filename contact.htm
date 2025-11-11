@@ -39,29 +39,68 @@
   <section class="contact-section container">
     <div class="contact-info">
       <h2>Get in Touch</h2>
-      <p>Have a question or want to see a demo? Fill out the form or contact us using the details below.</p>
+      <p>Ready to experience the future of land layout management? Share your details in the form or contact us to schedule a free demo. See firsthand how our platform streamlines operations and ensures transparency.</p>
 
-      <p><strong>Phone:</strong> +91 90000 35869</p>
-      <p><strong>Email:</strong> info@deccaniidentity.com</p>
-      <p><strong>Address:</strong> Adibatla, Hyderabad, Telangana, 501510, India</p>
+    <p><strong>Phone:</strong> +91 90000 35869</p>
+    <p><strong>Email:</strong> info@deccaniidentity.com</p>
+    <p><strong>Address:</strong> Adibatla, Hyderabad, Telangana, 501510, India</p>
     </div>
 
-    <form class="contact-form" aria-label="Contact form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Subject">
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
+
+    <form id="contact-Form">
+				      <input type="text" name="name" id="name" placeholder="Full Name" required />
+				      <input type="email" name="email" id="email" placeholder="Email Id " required />
+					  <input type="number" name="mobile" id="mobile" placeholder="+91 Phone Number" required />
+				      <textarea name="message" id="message" placeholder="Type your message.." rows="5" required></textarea>
+				      <button type="submit" id="submitBtn">Send Message</button>
+					  <div class="formstatus" id="formstatus"></div>
+			    </form>		
+
+
+    <!--<form class="contact-form" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeTtQKesGxNH9P9xoRGw8Fr85PYssStg7PMkWyJFp5JOK2k7w/formResponse" target="hidden_iframe">
+      <input type="text" name="entry.2005620554" placeholder="Your Name" required>
+      <input type="email" name="entry.1045781291" placeholder="Email" required>
+      <input type="tel" name="entry.1065046570" placeholder="Mobile Number" required>
+      <textarea name="entry.1166974658" placeholder="Message" required></textarea>
+      <button type="submit" class="cta primary">Send Message</button>
     </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>-->
+
   </section>
 
   </main>
+  <section class="container-full top-space">		  
+		   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+				<div id="gmap_canvas" style="width:100%;height:250px;"></div>
+				
+				<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>				
+				
+				<script type="text/javascript"> 
+				function init_map()
+				{
+				var myOptions = {zoom:14,center:new google.maps.LatLng(17.233565709347605, 78.542557909514148),mapTypeId: google.maps.MapTypeId.ROADMAP};
+				map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+				marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(17.233565709347605, 78.542557909514148)});
+				infowindow = new google.maps.InfoWindow({content:"<b> Hyderabad,</b><br>Telangana,501510,<br/>India." });
+				google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});
+				infowindow.open(map,marker);
+				}
+				
+				google.maps.event.addDomListener(window, 'load', init_map);		
+						    
+				</script>
+	</section>
+
+  <!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="js/google-map.js"></script>
+
 
   <footer>
     <div class="footer-container">
       <div class="footer-about">
         <h3>Footmark</h3>
-        <p>Digitalizing Every Square Foot of Land – Securely, Smartly, Seamlessly.</p>
+        <p>Digitalizing Every Square Foot of Land Layout – Securely, Smartly, Seamlessly.</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
@@ -71,13 +110,83 @@
       </div>
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p>info@deccaniidentity.com</p>
-        <p>+91 90000 35869</p>
-      </div>
+        <p><i class="fa fa-phone"></i> +91 90000 35869 &nbsp;<a href="tel:+919000035869"></a></p>
+        <p><i class="fa fa-envelope"></i> info@deccaniidentity.com</p>
+        <p><i class="fa fa-map-marker"></i> Deccan IDentity Software Pvt.Ltd., Hyderabad, Telangana, 501510, India</p>
     </div>
-    <p class="copyright">© 2025 DeccaniIDentity. All rights reserved.</p>
+    </div>
+    <p class="copyright">© 2025 DeccanIDentity. All rights reserved.</p>
   </footer>
-  <script src="js/site.js" defer></script>
+  
+ <script>
+	// Get a reference to the form and the status div
+	const customForm = document.getElementById('contact-Form');
+	const formStatus = document.getElementById('formstatus');
+	const submitBtn = document.getElementById('submitBtn');
+ 
+	//const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScz.../formResponse";
+	const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeTtQKesGxNH9P9xoRGw8Fr85PYssStg7PMkWyJFp5JOK2k7w/formResponse";
+
+	// IMPORTANT: Replace these with the actual "entry.XXXX" IDs from your Google Form
+	const formFieldIDs = {
+	    name: "entry.2005620554",
+	    email: "entry.1045781291",
+		mobile: "entry.1065046570",
+	    message: "entry.1166974658"
+	};
+
+customForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+	
+	// Disable the button and show a loading message
+    submitBtn.disabled = true;
+    formStatus.innerHTML = "Submitting...";
+    formStatus.className = "";
+
+    // Get the form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+	const mobile = document.getElementById('mobile').value;
+    const message = document.getElementById('message').value;
+
+    // Create a new URLSearchParams object to build the data payload
+    const formData = new URLSearchParams();
+    formData.append(formFieldIDs.name, name);
+    formData.append(formFieldIDs.email, email);
+	formData.append(formFieldIDs.mobile, mobile);
+    formData.append(formFieldIDs.message, message);    
+	
+	// Use the fetch API to send the data to Google Forms
+    fetch(googleFormUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Important for cross-origin requests to Google Forms
+        body: formData
+    })
+    .then(response => {
+        // Since we are using `no-cors`, the response object is opaque and we can't
+        // check for success in the traditional way. A successful fetch()
+        // call itself means the data was sent without network errors.
+        // We'll assume success if the fetch promise resolves.
+        formStatus.innerHTML = "Thank you! Your message sent successfully!.";
+        formStatus.className = "success";
+        customForm.reset(); // Clear the form fields
+    })
+    .catch(error => {
+        // This catch block will only run for network errors, not for Google Form's
+        // internal errors (which we can't see with no-cors).
+        console.error('Error:', error);
+        formStatus.innerHTML = "There was an error. Please try again.";
+        formStatus.className = "error";
+    })
+    .finally(() => {
+        // Re-enable the submit button after a short delay to give user feedback
+        setTimeout(() => {
+            submitBtn.disabled = false;
+        }, 1000);
+		});
+});
+</script>
+  <!-- Remove form-popup.js and form-handler.js -->
 </body>
 </html>
 
