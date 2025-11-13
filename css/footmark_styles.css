@@ -361,10 +361,21 @@ nav a.active, nav a:hover {
   text-align: center;
   background-color: #fff;
 }
+.mission h2 {
+  color: #007b82;
+  margin-top: 0;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
 
 .mission-content {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.mission .section-desc {
+  text-align: justify;
+  max-width: fit-content;
+  padding: 0 0px; 
 }
 
 .mission-grid {
@@ -809,3 +820,65 @@ footer {
   .marquee-track { animation: none; }
 }
 
+@import url('font-awesome.css'); 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+.iconColor .fa {
+	color: #ee0c45;
+}
+.bgColor1 .fa {
+	color: #fff;
+} 
+.about-video-section {
+  margin: 5px auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.about-video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+.about-video-section h2 {
+  color: #007b82;
+  margin-top: 0;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+.about-text {
+  flex: 1 1 50%;
+  min-width: 300px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+.about-video {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .about-video-grid {
+    flex-direction: column;
+  }
+}
