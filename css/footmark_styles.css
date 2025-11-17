@@ -489,12 +489,27 @@ footer {
 	float: left;
 	margin: 0 10px 0 0;
 }
-.copyright {
-  text-align: center;
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   margin-top: clamp(16px, 4vh, 20px);
-  font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-  opacity: 0.9;
+  padding-top: clamp(12px, 2.5vh, 16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  
 }
+
+.footer-bottom p {
+  margin: 0;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: #f0f0f0;
+}
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
 
 /* Modal/Popup Styles 
 .modal {
@@ -882,3 +897,183 @@ footer {
     flex-direction: column;
   }
 }
+
+
+
+  /* ===============================
+    T&C + Privacy Policy Modal Styles
+    =============================== */
+
+  /* Dark overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 15px;
+  }
+
+  /* Modal box */
+  .modal {
+    background: #ffffff;
+    width: 90%;
+    max-width: 750px;
+    max-height: 85vh;
+    border-radius: 12px;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  /* Header */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .modal-header h2 {
+    margin: 0;
+    color: #055361;
+    font-weight: 700;
+  }
+
+  /* Close button */
+  .modal-header .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #444;
+  }
+
+  .modal-header .close-btn:hover {
+    color: #000;
+  }
+
+  /* Scrollable content box */
+  .modal-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 18px;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  /* Content Typography */
+  .modal-content p,
+  .modal-content li {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .modal-content h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+    color: #055361;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Checkbox label */
+  .modal-footer label {
+    font-size: 0.95rem;
+    color: #0c0303;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Primary Button */
+  button {
+    background: #055361;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s;
+  }
+
+  button:hover:not(:disabled) {
+    background: #044551;
+  }
+
+  button:disabled {
+    background: #b3b3b3;
+    cursor: not-allowed;
+  }
+
+  /* Decline Button */
+  .decline-btn {
+    background: #b71c1c;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s;
+  }
+
+  .decline-btn:hover {
+    background: #9a1616;
+  }
+
+  /* Smooth animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================
+    Mobile Responsive Support
+    ============================ */
+  @media (max-width: 480px) {
+    .modal {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .modal-content {
+      padding: 10px;
+    }
+
+    .modal-footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    button, .decline-btn {
+      width: 100%;
+      text-align: center;
+    }
+}
+
+   
+
