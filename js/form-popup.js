@@ -1,6 +1,6 @@
 // Popup + Google Form bridge.
 // Usage: openPopupArgs(actionUrl, entryNameForName, entryNameForEmail, entryNameForPlan, entryNameForPlatform)
-// Example: onclick="openPopupArgs('https://docs.google.com/forms/.../formResponse','entry.880774368','entry.19233910','entry.1392537463','entry.1528537292')"
+// Example: onclick="openPopupArgs('https://docs.google.com/forms/.../formResponse','entry.1639588951','entry.1095327185','entry.1040563809','entry.80962579')"
 
 document.addEventListener('DOMContentLoaded', function () {
   const popup = document.getElementById('popup');
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     action: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf7RcqfMHILnU_fDAV8c212EniR1pbsdqpi6rxOKt4ytL_M5g/formResponse',
     fields: {
       name: 'entry.1639588951',
+      mobile: 'entry.941023126',
       email: 'entry.1095327185',
       pricingPlan: 'entry.1040563809',
       platform: 'entry.80962579'
@@ -24,12 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
   window.popupFormConfig = null;
 
   // Open popup with optional Google Form mapping
-  window.openPopupArgs = function (actionUrl, entryName, entryEmail, entryPlan, entryPlatform) {
-    if (actionUrl && entryName && entryEmail && entryPlan && entryPlatform) {
+  window.openPopupArgs = function (actionUrl, entryName, entryMobile, entryEmail, entryPlan, entryPlatform) {
+    if (actionUrl && entryName && entryMobile && entryEmail && entryPlan && entryPlatform) {
       window.popupFormConfig = {
         action: actionUrl,
         fields: {
           name: entryName,
+          mobile: entryMobile,
           email: entryEmail,
           pricingPlan: entryPlan,
           platform: entryPlatform
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     temp.action = window.popupFormConfig.action;
     temp.target = 'hidden_iframe';
 
-    const localToField = { name: 'name', email: 'email', pricingPlan: 'pricingPlan', platform: 'platform' };
+    const localToField = { name: 'name', email: 'email', mobile: 'mobile', pricingPlan: 'pricingPlan', platform: 'platform' };
 
     for (const localId in localToField) {
       const el = document.getElementById(localId);

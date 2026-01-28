@@ -16,6 +16,25 @@ body {
   -webkit-text-size-adjust: 100%; /* Prevent iOS font scaling */
   text-rendering: optimizeLegibility;
 }
+/* Store badges for app downloads */
+.store-badges {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+}
+.store-badge img {
+  display: block;
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+
+}
+@media (max-width: 420px) {
+  .store-badge img { height: 44px; }
+}
+
 
 /* Header */
 header {
@@ -171,7 +190,7 @@ nav a.active, nav a:hover {
 
 /* Hero */
 .hero {
-  background: linear-gradient(120deg, #007b82, #009eab);
+  background: linear-gradient(120deg, #44b425, #009eab);
   color: #fff;
   text-align: center;
   padding: clamp(60px, 10vh, 100px) 20px clamp(40px, 8vh, 80px);
@@ -248,7 +267,7 @@ nav a.active, nav a:hover {
 
 /* Page Header */
 .page-header {
-  background: linear-gradient(120deg, #007b82, #009eab);
+  background: linear-gradient(120deg, #44b425, #009eab);
   color: #fff;
   text-align: center;
   padding: clamp(30px, 6vh, 60px) 20px;
@@ -657,7 +676,7 @@ footer {
     /* Trigger Button */
     .open-popup-btn {
       padding: 12px 20px;
-      background: #2c3e50;
+      background: #1b7502b4;
       color: white;
       border: none;
       border-radius: 8px;
@@ -666,7 +685,7 @@ footer {
       transition: 0.3s;
     }
     .open-popup-btn:hover {
-      background: #1a242f;
+      background: #1b7502b4;
     }
 
     /* Popup Overlay */
@@ -678,7 +697,7 @@ footer {
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background:#1b7502b4(0,0,0,0.6);
       animation: fadeIn 0.3s ease-in-out;
     }
 
@@ -691,7 +710,7 @@ footer {
       text-align: left;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 5px 15px rgba(196, 227, 19, 0.95);
       animation: slideDown 0.3s ease;
       position: relative;
     }
@@ -705,7 +724,7 @@ footer {
       border: none;
       font-size: 20px;
       cursor: pointer;
-      color: #666;
+      color: #000000;
     }
 
     .open-popup-form {
@@ -722,14 +741,14 @@ footer {
     }
 
     .open-popup-button[type="submit"] {
-      background: #2c3e50;
+      background: #1b7502b4;
       color: white;
       border: none;
       cursor: pointer;
       transition: 0.3s;
     }
     .open-popup-button[type="submit"]:hover {
-      background: #1a242f;
+      background: #1b7502b4;
     }
 
     .formstatus {
@@ -1021,7 +1040,7 @@ footer {
   }
 
   button:hover:not(:disabled) {
-    background: #044551;
+    background:#1b7502;
   }
 
   button:disabled {
@@ -1076,4 +1095,62 @@ footer {
 }
 
    
+/* Floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 56px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.whatsapp-float .fa-whatsapp {
+  font-size: 22px;
+}
 
+/* Slightly smaller on very small screens */
+@media (max-width: 420px) {
+  .whatsapp-float { width: 48px; height: 48px; line-height: 48px; right: 16px; bottom: 16px; }
+  .whatsapp-float .fa-whatsapp { font-size: 20px; }
+}
+
+
+nav a {
+  margin: 0 6px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  transition: background 220ms cubic-bezier(.2,.9,.2,1),
+              color 180ms ease,
+              transform 160ms ease,
+              box-shadow 220ms ease;
+  position: relative;
+  display: inline-block;
+}
+nav a:focus {
+  outline: 3px solid rgba(0,123,130,0.12);
+  outline-offset: 3px;
+}
+nav a.active, nav a:hover {
+  background: #ff7a00;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255,122,0,0.3);
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
